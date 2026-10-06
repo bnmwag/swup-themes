@@ -1,6 +1,6 @@
 /* One import per theme, in your main css. Swap both lines to change theme. */
-@import "@bnmwag/swup-themes/parallel-stack/layout.css";
-@import "@bnmwag/swup-themes/parallel-stack/theme.css";
+@import "@bnmwag/swup-themes/scale-portal/layout.css";
+@import "@bnmwag/swup-themes/scale-portal/theme.css";
 
 @import "locomotive-scroll/dist/locomotive-scroll.css";
 

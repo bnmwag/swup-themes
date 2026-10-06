@@ -8,7 +8,7 @@ defineService({
     scope: "app",
     setup() {
         const transitions = createTransitions({
-            theme: "parallel-stack", // "fade" | "parallel-stack" | your own defineTheme(...)
+            theme: "scale-portal",
             preload: { preloadInitialPage: !import.meta.env.DEV },
             onLeave: () => emit("page:leave"),
             onEnter: () => emit("page:enter"),
