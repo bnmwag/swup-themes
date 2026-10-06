@@ -1,0 +1,21 @@
+---
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/work", label: "Work" },
+];
+const path = Astro.url.pathname;
+---
+
+{/* parallel-stack: the header is a swup container, so it needs this attribute */}
+<header data-swup-transition="header">
+  <nav class="nav">
+    {links.map((l) => <a href={l.href} aria-current={path === l.href ? "page" : undefined}>{l.label}</a>)}
+  </nav>
+</header>
+
+<style>
+  .nav { margin-top: 1rem; display: flex; gap: 0.25rem; padding: 0.35rem; border-radius: 999px; background: rgba(20,20,20,.85); backdrop-filter: blur(8px); }
+  .nav a { color: #aaa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 999px; }
+  .nav a[aria-current="page"] { color: #000; background: #fff; }
+</style>

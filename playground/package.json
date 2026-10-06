@@ -1,0 +1,19 @@
+{
+	"name": "playground",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview"
+	},
+	"dependencies": {
+		"@bnmwag/swup-themes": "workspace:*",
+		"astro": "^7.3.5",
+		"locomotive-scroll": "^5.0.1",
+		"nanostores": "^1.5.4"
+	},
+	"devDependencies": {
+		"typescript": "^5.9.3"
+	}
+}

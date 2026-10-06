@@ -1,0 +1,19 @@
+:root {
+  --swup-fade-duration: 300ms;
+  --swup-fade-ease: ease;
+}
+
+html.is-changing [data-swup-transition] {
+  opacity: 1;
+  transition: opacity var(--swup-fade-duration) var(--swup-fade-ease);
+}
+
+html.is-animating [data-swup-transition] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-changing [data-swup-transition] {
+    transition: none;
+  }
+}

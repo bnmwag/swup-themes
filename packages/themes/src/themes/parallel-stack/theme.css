@@ -1,0 +1,48 @@
+/* parallel-stack: transition states. Defaults match the original spec. */
+:root {
+  --swup-ease: cubic-bezier(0.4, 0.3, 0, 1);
+  --swup-duration: 1.4s;
+  --swup-prev-transform: translateY(-160px) scale(0.95);
+  --swup-prev-opacity: 0.5;
+  --swup-next-transform: translateY(50dvh);
+  --swup-next-clip: inset(70% 0% 0% 0%);
+}
+
+html.is-changing [data-swup-transition] {
+  transition:
+    transform var(--swup-duration) var(--swup-ease),
+    opacity var(--swup-duration) var(--swup-ease),
+    clip-path var(--swup-duration) var(--swup-ease);
+}
+
+html.is-changing [data-swup-transition="header"]:not(.is-previous-container) {
+  transition:
+    opacity 0.4s var(--swup-ease) 0.9s,
+    transform 0.8s var(--swup-ease) 0.7s;
+}
+
+[data-swup-transition].is-previous-container {
+  transform: var(--swup-prev-transform);
+  opacity: var(--swup-prev-opacity);
+}
+
+[data-swup-transition="header"].is-previous-container {
+  opacity: 0;
+}
+
+[data-swup-transition].is-next-container {
+  transform: var(--swup-next-transform);
+  clip-path: var(--swup-next-clip);
+}
+
+[data-swup-transition="header"].is-next-container {
+  opacity: 0;
+  transform: translateY(10dvh);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-changing [data-swup-transition],
+  html.is-changing [data-swup-transition="header"]:not(.is-previous-container) {
+    transition: none;
+  }
+}

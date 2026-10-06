@@ -1,0 +1,40 @@
+{
+	"name": "@bnmwag/swup-themes",
+	"version": "0.3.0",
+	"description": "Swup transition themes + a drop-in transition service factory",
+	"type": "module",
+	"license": "UNLICENSED",
+	"files": ["dist"],
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./parallel-stack/layout.css": "./dist/themes/parallel-stack/layout.css",
+		"./parallel-stack/theme.css": "./dist/themes/parallel-stack/theme.css",
+		"./fade/theme.css": "./dist/themes/fade/theme.css"
+	},
+	"sideEffects": ["**/*.css"],
+	"scripts": {
+		"build": "rm -rf dist && tsc -p tsconfig.json && bun scripts/copy-css.ts",
+		"dev": "tsc -p tsconfig.json --watch",
+		"typecheck": "tsc -p tsconfig.json --noEmit",
+		"test": "bun test"
+	},
+	"dependencies": {
+		"@swup/head-plugin": "^2.3.1",
+		"@swup/parallel-plugin": "^0.4.0",
+		"@swup/preload-plugin": "^3.2.12",
+		"swup": "^4.10.0"
+	},
+	"devDependencies": {
+		"@happy-dom/global-registrator": "^20.14.5",
+		"@types/bun": "latest",
+		"typescript": "^5.9.3"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	}
+}

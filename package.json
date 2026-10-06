@@ -1,0 +1,16 @@
+{
+  "name": "swup-themes-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "bun run --cwd packages/themes build",
+    "dev:themes": "bun run --cwd packages/themes dev",
+    "dev": "bun run build && bun run --cwd playground dev",
+    "build:playground": "bun run build && bun run --cwd playground build",
+    "typecheck": "bun run --cwd packages/themes typecheck",
+    "test": "bun run --cwd packages/themes test"
+  },
+  "workspaces": [
+    "packages/*",
+    "playground"
+  ]
+}
