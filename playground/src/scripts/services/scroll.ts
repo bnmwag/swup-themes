@@ -12,7 +12,10 @@ defineService({
     name: "scroll",
     scope: "page",
     setup() {
+        const wrapper = document.querySelector("#swup") ?? document.body;
+
         instance = new LocomotiveScroll({
+            lenisOptions: { wrapper },
             scrollCallback({ scroll, limit, velocity, direction, progress }) {
                 $scroll.set({ scroll, limit, velocity, direction, progress });
             },

@@ -1,7 +1,7 @@
 ---
 import "@/styles/main.css";
 
-import { Footer, Navigation, Preloader } from "@/components/layout";
+import { Footer, Navigation } from "@/components/layout";
 
 interface Props {
   title?: string;
@@ -21,15 +21,6 @@ const { scrollOrientation = "vertical", title = "Kit", description } = Astro.pro
     {description && <meta name='description' content={description} />}
   </head>
   <body class='font-sans antialiased'>
-    <Preloader />
-
-    {/*
-      parallel-stack markup. For "fade" your ORIGINAL layout works unchanged:
-        <Navigation />
-        <main id='swup' data-swup-transition><slot /></main>
-        <Footer />
-      (and Navigation without the data-swup-transition="header" attribute)
-    */}
     <div data-swup-shell>
       <Navigation />
       <main id='swup' data-swup-transition>

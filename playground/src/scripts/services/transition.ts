@@ -3,6 +3,7 @@ import { createTransitions } from "@bnmwag/swup-themes";
 import { defineService, emit } from "@/scripts/core";
 
 defineService({
+
     name: "transitions",
     scope: "app",
     setup() {

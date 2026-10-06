@@ -85,7 +85,7 @@ export function createTransitions(config: TransitionsConfig): Transitions {
     theme,
     destroy() {
       cleanupSetup?.();
-      unregister.forEach((off) => off());
+      for (const off of unregister) off();
       swup.destroy();
     },
   };

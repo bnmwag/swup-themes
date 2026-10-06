@@ -1,6 +1,5 @@
 /* parallel-stack: layout. Surfaces must stay opaque to avoid bleed-through. */
 :where([data-swup-shell]) {
-
   background-color: var(--swup-shell-bg, #000);
   display: grid;
   overflow: hidden;
