@@ -1,9 +1,11 @@
 import type { SwupTheme } from "../types.js";
 import { fade } from "./fade/index.js";
 import { parallelStack } from "./parallel-stack/index.js";
+import { scalePortal } from "./scale-portal/index.js";
 
 export const themes = {
   "parallel-stack": parallelStack,
+  "scale-portal": scalePortal,
   fade,
 } as const satisfies Record<string, SwupTheme>;
 

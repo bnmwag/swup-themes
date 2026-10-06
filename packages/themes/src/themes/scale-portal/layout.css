@@ -1,0 +1,42 @@
+/* parallel-stack: layout. Surfaces must stay opaque to avoid bleed-through. */
+:where([data-swup-shell]) {
+  background-color: var(--swup-shell-bg, #000);
+  display: grid;
+  overflow: hidden;
+  grid-template-areas:
+    "header"
+    "main";
+  height: 100dvh;
+}
+
+:where([data-swup-shell] > [data-swup-transition="header"]) {
+  grid-area: header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+:where([data-swup-shell] > #swup) {
+  grid-area: main;
+  overflow-y: auto;
+  z-index: 2;
+  clip-path: inset(0% 0% 0% 0%);
+  background-color: var(--swup-main-bg, #fff);
+  scrollbar-width: none;
+}
+
+:where([data-swup-shell] > #swup)::-webkit-scrollbar {
+  display: none;
+}
+
+:where([data-swup-shell] > [data-swup-transition].is-previous-container) {
+  pointer-events: none;
+}
+
+:where([data-swup-shell] > #swup.is-previous-container) {
+  z-index: 1;
+}
